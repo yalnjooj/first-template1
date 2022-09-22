@@ -151,13 +151,12 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-header .container {
     position: relative;
 }
 
-* {
+
+
+header .container .menu-icon-search * {
     color: black;
 }
 
@@ -172,7 +171,7 @@ header .container::after {
 }
 
 header .container img {
-    width: 150px;
+    max-width: 150px;
 }
 
 header .container .menu-icon-search {
@@ -199,13 +198,17 @@ header .container ul {
     display: flex;
 }
 
+header .container .menu-icon-search ul li{
+    padding-left: 11px;
+    padding-right: 11px;
+}
 
 
 header .container ul li a {
     text-decoration: none;
-    padding: 18px;
     z-index: 1;
     position: relative;
+    padding-bottom: 19px;
 }
 
 
@@ -267,7 +270,7 @@ header .container ul li a.active {
  .landing {
     position: relative;
     height: 100vh;
-    background-image: url("/images/istockphoto-1353553203-170667a.jpg");
+    background-image: url("../images/istockphoto-1353553203-170667a.jpg");
     background-repeat: no-repeat;
     background-size: cover;
  }
@@ -278,7 +281,7 @@ header .container ul li a.active {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.411);
+    background-color: rgba(0 0 0 / 50%);
     z-index: 1;
  }
 
@@ -507,7 +510,7 @@ header .container ul li a.active {
 }
 
 .portofolio .H-menu ul li {
-    padding: 10px 20px;
+    padding: 10px 17px;
 }
 
 .portofolio .H-menu ul li.active {
@@ -520,7 +523,7 @@ header .container ul li a.active {
 .portofolio .galary {
     margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     /* grid: 20px; */
 }
 
@@ -533,7 +536,7 @@ header .container ul li a.active {
 }
 
 .portofolio .galary> section .image img {
-    width: 100%;
+    max-width: 100%;
 }
 
 .portofolio .galary> section {
@@ -618,6 +621,9 @@ header .container ul li a.active {
     color: white;
     font-weight: bold;
 }
+/* End Protofolio */
+
+/* Start Video */
 
 .video {
     position: relative;
@@ -629,7 +635,7 @@ header .container ul li a.active {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.253);
+    background-color: rgba(0 0 0 / 50%);
 }
 
 .video video {
@@ -669,20 +675,22 @@ header .container ul li a.active {
     width: fit-content;
     margin: 26px auto;
 }
-/* End Protofolio */
+/* End Video */
 
 
 
-/* Start About */
+/* Start About sack */
 
 .about {
     overflow: hidden;
 }
 
 
+
 .about img {
     position: relative;
     bottom: -120px;
+    margin-top: -120px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -767,7 +775,7 @@ header .container ul li a.active {
 
 .skills .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
 }
 
@@ -869,28 +877,37 @@ header .container ul li a.active {
     background-image: url("../images/1595484856829.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
     padding: 90px;
+    position: relative;
 }
 
-.accumsan img {
-    max-width: 100%;
-    
-}
-
-.accumsan * {
+.accumsan::before {
+    content: "";
+    position: absolute;
     color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 50%);
+}
+
+
+.accumsan .container {
+    color: white;
+    position: relative;
     text-align: center;
 }
 
 .accumsan h3 {
     font-weight: normal;
-    font-size: 30px;
+    font-size: 20px;
     margin-bottom: 50px;
 }
 
 .accumsan p {
     font-size: 20px;
+    text-align: center;
 }
 
 @media (max-width: 767px){
@@ -899,6 +916,7 @@ header .container ul li a.active {
     }
 }
 /* End Accumsan */
+
 
 /* Start Plans */
 
@@ -946,7 +964,7 @@ header .container ul li a.active {
 
 .pricing .plans> div ul li {
     line-height: 3;
-    width: fit-content;
+    width: 70%;
     margin: 0 auto;
 
 }
@@ -957,6 +975,7 @@ header .container ul li a.active {
 
 .pricing :last-of-type {
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .pricing :last-of-type p {
@@ -979,68 +998,78 @@ header .container ul li a.active {
 /* End Plans */
 
 
-/* Start About */
+/* Start Mail */
 
-.about {
+.mail {
     background-image: url("../images/subscribe.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
     height: 250px;
+    position: relative;
 }
-.about .container {
+
+.mail::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 50%);
+}
+
+.mail .container {
+    position: relative;
     display: flex;
     align-items: center;
     height: 100%;
     justify-content: center;    
 }
-.about .container form,
-.about .container p {
+.mail .container form {
     color: white;
+    text-align: center;
 }
 
-.about .container form {
-    flex: 2;
-    position: relative;
-}
-.about .container form input {
-    position: relative;
-    height: 50px;
-    width: 100%;
+
+.mail .container form [type="email"] {
     border: solid 2px white;
     background-color: transparent;
     color: white;
     outline: none;
-    padding-left: 50px;
-    padding-right: 111px;
+    padding: 10px 0 10px 50px;
+    border-right: none;
 }
 
-.about .container form::before {
+.mail .container form [type="submit"] {
+    background-color: var(--mainColor);
+    padding: 10px;
+    color: white;
+    border: 2px solid white;
+    border-left: none;
+    margin-left: -5px;
+}
+
+.mail .container form i {
+    font-size: 30px;
+    position: relative;
+    left: 47px;
+    top: 5px;
+}
+/* .mail .container form::before {
     content: "\f0e0";
     font-family: "Font Awesome 5 free";
     font-weight: 900;
     position: absolute;
     top: 50%;
-    left: 15px;
+    left: 30px;
     transform: translateY(-50%);
     font-size: 25px;
-}
-
-.about .container form::after {
-    content: "SUBSCRIBE";
-    position: absolute;
-    top: 50%;
-    right: 2px;
-    transform: translateY(-50%);
-    font-size: 15px;
-    background-color: var(--mainColor);
-    height: calc(100% - 4px);
-    padding: 0 13px;
-    line-height: 3;
-}
+} */
 
 
-.about .container p {
+
+.mail .container p {
     flex: 3;
     padding-right: 200px;
     line-height: 2;
@@ -1049,19 +1078,20 @@ header .container ul li a.active {
 
 
 @media (max-width: 767px){
-    .about .container {
+    .mail .container {
         flex-direction: column;
         margin-top: 50px;
     }
 
-    .about .container p {
+    .mail .container p {
         flex: 0;
         padding: 0;
         text-align: center;
         margin-right: 15px;
+        margin-top: 50px;
     }
 
-    .about .container form::before {
+    /* .mail .container form::before {
         content: "\f0e0";
         font-family: "Font Awesome 5 free";
         font-weight: 900;
@@ -1070,36 +1100,14 @@ header .container ul li a.active {
         left: 15px;
         transform: translateY(-50%);
         font-size: 25px;
-    }
-    
-    .about .container form::after {
-        content: "SUBSCRIBE";
-        position: absolute;
-        top: 15%;
-        right: 2px;
-        transform: translateY(-50%);
-        font-size: 15px;
-        background-color: var(--mainColor);
-        height: calc(34% - 4px);
-        padding: 0 13px;
-        line-height: 3;
-    }
+    } */
 
-    .about .container form input {
-        position: relative;
-        height: 50px;
-        width: 100%;
-        border: solid 2px white;
-        background-color: transparent;
-        color: white;
-        outline: none;
-        padding-left: 50px;
-        padding-right: 111px;
-    }
+
+
 
     
 }
-/* End About */
+/* End Mail */
 
 
 /* Start Contact Us */
@@ -1184,44 +1192,51 @@ footer {
     background-size: cover;
     height: 400px;
 }
-footer .footer {
+
+footer::before {
+    content: "";
     position: absolute;
-    border: 10px white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 50%);
 }
 
-footer .footer img {
+footer .container {
+    position: relative;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px black;
+    width: fit-content;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+footer .container img {
     width: 180px;
     margin: 30px 0;
 }
 
-footer .footer hr {
+footer .container hr {
     margin: 20px 0;
 }
 
-footer .footer .icons {
+footer .container .icons {
     margin-bottom: 60px;
-    
 }
 
-footer .footer .icons * {
+footer .container .icons * {
     margin: 0 10px;
 }
 
 
-footer .footer p span {
+footer .container p span {
     color: var(--mainColor);
     font-weight: bold;
 }
 
 
-footer .footer * {
-    color: white;
-    text-shadow: 1px 1px black;
-}
 
 
 /* End Footer */
